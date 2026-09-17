@@ -1,55 +1,67 @@
-# Ecommerce
+# Proyecto Backend — Ecommerce (histórico)
 
-Asegúrate de tener instalado Node.js en tu sistema. Si no lo tienes instalado, puedes descargarlo desde el sitio web oficial: [Node.js](https://nodejs.org/).
-MongoDB Atlas o una base de datos local configurada.
+Backend de aprendizaje construido con **Node.js, Express y MongoDB** para practicar una arquitectura ecommerce con autenticación, sesiones, API REST, carritos, productos, categorías, usuarios, mensajería y documentación Swagger.
 
-## Instalación
+Este repositorio se conserva como **antecedente histórico** dentro de la evolución que más adelante desembocó en la línea Meow Matrix. No es la autoridad moderna del ecommerce actual y no debe confundirse con [`MeowMatrix---Backend-2v`](https://github.com/Enzopinotti/MeowMatrix---Backend-2v), que es el backend mantenido y modernizado en 2026.
 
-1. Clona este repositorio: git clone 'URL_DEL_REPOSITORIO'.
+## Qué contiene
 
-2. Ingresa al directorio del proyecto: cd 'NOMBRE_DEL_DIRECTORIO'.
+La implementación histórica incluye, entre otros conceptos:
 
-3. Ejecuta el siguiente comando para instalar las dependencias:
+- Express;
+- MongoDB;
+- autenticación local y OAuth con GitHub;
+- sesiones persistidas con Mongo;
+- JWT;
+- rutas de productos, categorías, carritos, usuarios, sesiones y mensajes;
+- Swagger/OpenAPI;
+- Docker y material de experimentación de infraestructura.
 
-   ```bash
-   npm install
+## Ejecución histórica
 
-4. Crea un archivo .env en la raíz del proyecto y agrega las siguientes variables:
+Requiere Node.js y una instancia de MongoDB/Atlas.
 
-   ```bash
-   mongo=URL_DE_CONEXION_A_MONGODB
-   hash=SECRETO_PARA_SESIONES
-   tokenkey=SECRETO_PARA_JWT
-   jwtsecret=SECRETO_PARA_JWT
-   gitclientid=ID_DEL_CLIENTE_GITHUB
-   gitclientsecret=SECRETO_DEL_CLIENTE_GITHUB
-   gitcallbackurl=URL_DE_RETORNO_DE_GITHUB_AUTH
+```bash
+npm install
+npm start
+```
 
-## Uso
+La aplicación espera configuración local mediante variables de entorno para MongoDB, sesión/JWT y OAuth. **No se deben versionar valores reales ni reutilizar credenciales históricas.**
 
-1. Inicia la aplicación: npm start
-2. Accede a [LocalHost](http://localhost:8080) en tu navegador.
+## Relación con Meow Matrix
 
-### Funcionalidades Principales
+Durante la auditoría de portfolio 2026 se trató este repositorio como parte de la misma genealogía técnica que:
 
-Autenticación: Incluye la autenticación local y con GitHub. Las rutas de autenticación se encuentran en el directorio /routes/views.
+- [`Meow-Matrix---Frontend`](https://github.com/Enzopinotti/Meow-Matrix---Frontend)
+- [`MeowMatrix---Backend-2v`](https://github.com/Enzopinotti/MeowMatrix---Backend-2v)
 
-Persistencia de Datos: Utiliza MongoDB para almacenar datos. La configuración y la conexión a la base de datos están en el archivo database.js.
+La conclusión actual es simple:
 
-Manejo de Sesiones: Se implementa el manejo de sesiones con Express y se utiliza express-session en conjunto con connect-mongo para almacenar las sesiones en MongoDB.
+- este repositorio conserva valor histórico y educativo;
+- Meow Matrix 2026 es la autoridad moderna para el showcase ecommerce full-stack;
+- no corresponde mantener dos backends paralelos fingiendo que ambos son producción;
+- cualquier modernización futura de este repo debe enfocarse en preservación, seguridad e higiene, no en duplicar Meow.
 
-Rutas API: La aplicación cuenta con diversas rutas API para usuarios, productos, categorías, carritos, sesiones y mensajes. Estas rutas se encuentran en el directorio /routes/api.
+## Deuda/higiene conocida
 
-### Contribución
+La auditoría central detectó artefactos de infraestructura y archivos generados que no deberían considerarse autoridad de código actual, incluyendo binarios/logs históricos. La estrategia correcta es removerlos de la rama mantenida cuando este repo tenga su carril dedicado, **sin reescribir ni borrar el valor del historial Git**.
 
-Si quieres contribuir a este proyecto, por favor, sigue estos pasos:
+También deben revisarse antes de cualquier reutilización:
 
-1. Haz un fork del proyecto.
-2. Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
-3. Realiza cambios y commitea tus mejoras (git commit -am 'Agrega nueva funcionalidad').
-4. Sube tus cambios al repositorio (git push origin feature/nueva-funcionalidad).
-5. Crea un pull request.
+- dependencias y runtime;
+- manejo histórico de contraseñas/sesiones/JWT;
+- variables de entorno y credenciales antiguas;
+- tests que realmente sigan representando comportamiento válido;
+- assets Docker/Kubernetes como material de aprendizaje vs. infraestructura operativa.
 
-### Autor
+## Estado en el portfolio
 
-Enzo Daniel Pinotti.
+**Clasificación:** backend/full-stack histórico con lineage resuelto.
+
+**Tratamiento:** preservar y documentar; no convertirlo en un segundo ecommerce moderno.
+
+Portfolio coordination: [`Enzopinotti/Enzopinotti#19`](https://github.com/Enzopinotti/Enzopinotti/issues/19)
+
+## Autor
+
+Enzo Daniel Pinotti
